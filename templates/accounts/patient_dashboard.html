@@ -1,0 +1,10 @@
+<div style="font-family: Arial; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+  <h2 style="color: #4CAF50;">Patient Dashboard</h2>
+  <p>Welcome {{ user.first_name }} {{ user.last_name }}</p>
+  <p>Email: {{ user.email }}</p>
+  {% if user.profile_picture %}
+      <img src="{{ user.profile_picture.url }}" alt="Profile Picture" width="150" height="150" style="border-radius: 50%; border: 2px solid #2196F3;">
+  {% endif %}
+  <p>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }} - {{ user.pincode }}</p>
+  <a href="{% url 'logout' %}" style="padding: 12px 24px; background-color: crimson; color: white; text-decoration: none; border-radius: 8px; display: inline-block; margin-top: 10px;">Logout</a>
+</div>
